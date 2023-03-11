@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Form, Button, Row, Col, Alert } from "react-bootstrap";
+import { API_URL } from "../constants";
 
 const AddRoomForm = () => {
   const [roomNumber, setRoomNumber] = useState("");
@@ -12,7 +13,7 @@ const AddRoomForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const addRoom = async () => {
-      const response = await fetch("http://localhost:5000/api/room", {
+      const response = await fetch(`${API_URL}/api/room`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

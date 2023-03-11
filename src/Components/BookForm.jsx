@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import emailjs from 'emailjs-com';
+import { API_URL } from "../constants";
 
 function BookingForm({ isAdmin }) {
   const [email, setEmail] = useState('');
@@ -13,7 +14,7 @@ function BookingForm({ isAdmin }) {
     e.preventDefault();
     const data = { email, roomNumber, startTime, endTime };
     try {
-      const bookrooms = await fetch('http://localhost:5000/api/booking', {
+      const bookrooms = await fetch(`${API_URL}/api/booking`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

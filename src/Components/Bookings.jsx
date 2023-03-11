@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Table, Button } from "react-bootstrap";
+import { API_URL } from "../constants";
 
 const BookingList = () => {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
     const fetchBookings = async () => {
-      const response = await fetch("http://localhost:5000/api/booking");
+      const response = await fetch(`${API_URL}/api/booking`);
       const data = await response.json();
       setBookings(data);
     };
@@ -23,7 +24,7 @@ const BookingList = () => {
     if (email || roomNumber || startTime || endTime) {
       const confirmed = window.confirm("Are you sure you want to update the booking with the new details and price?");
       if (confirmed) {
-        const response = await fetch(`http://localhost:5000/api/booking/${bookingId}`, {
+        const response = await fetch(`${API_URL}/api/booking/${bookingId}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -52,7 +53,7 @@ const BookingList = () => {
     const confirmed = window.confirm("Are you sure you want to cancel the booking?");
   
     if (confirmed) {
-      const response = await fetch(`http://localhost:5000/api/booking/${bookingId}/cancel`, {
+      const response = await fetch(`${API_URL}/api/booking/${bookingId}/cancel`, {
         method: "POST",
       });
   
