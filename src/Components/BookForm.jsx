@@ -20,7 +20,6 @@ function BookingForm({ isAdmin }) {
         },
         body: JSON.stringify(data),
       });
-      const response = await bookrooms.json();
       if (bookrooms.status === 201) {
         setMessage('Room booked successfully!');
         sendEmail();

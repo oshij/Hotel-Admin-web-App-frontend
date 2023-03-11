@@ -11,7 +11,6 @@ const AddRoomForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data={roomNumber,occupancy,price,type:roomType,image}
     const addRoom = async () => {
       const response = await fetch("http://localhost:5000/api/room", {
         method: "POST",

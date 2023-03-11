@@ -5,8 +5,6 @@ import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import Navbar from "./Components/Navbar";
 import Rooms from "./Components/Rooms";
 
-import { useEffect } from "react";
-
 import AddRoomForm from "./Components/AddRooms";
 
 import Bookings from "./Components/Bookings";

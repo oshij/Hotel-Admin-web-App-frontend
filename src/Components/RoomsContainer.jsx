@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RoomsList from "./RoomsList";
 import Loading from "./Loading";
-import { useSelector } from "react-redux";
 
 export default function RoomsContainer() {
   useEffect(()=>{
@@ -9,7 +8,6 @@ export default function RoomsContainer() {
    
 },[]);
 const [rooms,setRooms]=useState([]);
-const [search,setSearch]=useState("");
 
 const fetchRooms=async() => {
     const fetchRooms=await fetch("http://localhost:5000/api/room")
