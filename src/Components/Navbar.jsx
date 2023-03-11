@@ -35,7 +35,7 @@ const Navbar = () => {
                   className="nav-link"
                   //   activeClassName="active_class"
                   exact="true"
-                  to="/rooms"
+                  to="/"
                 >
                   Rooms
                 </NavLink>

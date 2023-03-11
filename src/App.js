@@ -19,7 +19,7 @@ function App() {
     
     <Navbar />
       <Routes>
-        <Route index path="/rooms" element={<Rooms /> } />
+        <Route index path="/" element={<Rooms /> } />
          <Route path="/addRoom" element={<AddRoomForm/>} />
          <Route path="/bookRoom" element={<BookingForm/>} />
          <Route path="/bookings" element={<Bookings />} /> 
